@@ -16,8 +16,7 @@ function App() {
           headers: { "Content-type": "application/json" },
         }
       );
-      const data = await response.json();
-      console.log(data);
+      await response.json();
     };
     fetchCart();
   }, [cart]);
