@@ -6,7 +6,7 @@ import classes from "./Cart.module.css";
 import CartItem from "./CartItem";
 import { useDispatch } from "react-redux";
 
-const Cart = (props) => {
+const Cart = () => {
   const showCart = useSelector((state) => state.showCart);
   const cartItems = useSelector((state) => state.items);
   const hasItems = cartItems.length > 0;

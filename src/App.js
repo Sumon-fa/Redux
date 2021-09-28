@@ -9,14 +9,15 @@ function App() {
   useEffect(() => {
     const fetchCart = async () => {
       const response = await fetch(
-        "https://react-http-e353e-default-rtdb.europe-west1.firebasedatabase.app/cart.json",
+        "https://react-http-e353e-default-rtdb.europe-west1.firebasedatabase.app/orderCart.json",
         {
           method: "POST",
           body: JSON.stringify(cart),
           headers: { "Content-type": "application/json" },
         }
       );
-      await response.json();
+      const data = await response.json();
+      console.log(data);
     };
     fetchCart();
   }, [cart]);

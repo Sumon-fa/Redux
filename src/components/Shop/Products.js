@@ -4,15 +4,15 @@ import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 
 const Products = (props) => {
-  const [meals, setMeals] = useState([]);
+  const [cart, setCart] = useState([]);
   const dispatch = useDispatch();
   function addItemHandler(item) {
     dispatch({ type: "add", item: item });
   }
   useEffect(() => {
-    const fetchMeal = async () => {
+    const fetchCart = async () => {
       const url =
-        "https://react-http-e353e-default-rtdb.europe-west1.firebasedatabase.app/meals.json";
+        "https://react-http-e353e-default-rtdb.europe-west1.firebasedatabase.app/cart.json";
       const response = await fetch(url);
 
       const data = await response.json();
@@ -27,9 +27,9 @@ const Products = (props) => {
           description: data[key].description,
         });
       }
-      setMeals(loadedData);
+      setCart(loadedData);
     };
-    fetchMeal();
+    fetchCart();
   }, []);
 
   /*function addToCartHandler(items) {
@@ -47,7 +47,7 @@ const Products = (props) => {
     <section className={classes.products}>
       <h2>Buy your favorite products</h2>
       <ul>
-        {meals.map((items) => (
+        {cart.map((items) => (
           <ProductItem
             key={items.id}
             id={items.id}
