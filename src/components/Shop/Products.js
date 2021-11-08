@@ -16,7 +16,7 @@ const Products = (props) => {
       const response = await fetch(url);
 
       const data = await response.json();
-      console.log(data);
+
       const loadedData = [];
       for (const key in data) {
         loadedData.push({

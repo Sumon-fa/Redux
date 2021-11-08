@@ -18,7 +18,6 @@ const Cart = () => {
     dispatch({ type: "remove", id: id });
   }
 
-  console.log(cartItems);
   return (
     <Fragment>
       {showCart && (

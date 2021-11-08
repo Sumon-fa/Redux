@@ -41,7 +41,6 @@ function cartReducer(state = initialState, action) {
       updatedItems[existingCartItemIndex] = updatedItem;
     } else {
       updatedItems = state.items.concat(action.item);
-      console.log(updatedItems);
     }
 
     return {
